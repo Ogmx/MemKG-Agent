@@ -27,13 +27,6 @@ from prompts import prompt_dict, output_format_dict, load_result
 from agent import Env
 
 
-def load_llm(model_name="gpt-3.5-turbo"):
-    llm = ChatOpenAI(model_name=model_name,
-                    temperature=0,
-                    api_key = 'sk-fMVPB36VRb8TJLI073E408C1772848Df87F68c048aCeCf09',
-                    base_url = 'https://api2.aigcbest.top/v1',
-                    )
-    return llm
 
 def run(args, df, agent, output_path):
     results = ["None" for _ in range(len(df))]
@@ -168,7 +161,7 @@ if __name__ == "__main__":
     parser.add_argument('--prompt', default='ToT', type=str)
     parser.add_argument('--context', default='none', type=str)
     parser.add_argument('--output_format', default='none', type=str)
-    parser.add_argument('--repeat_turn', default=1, type=int)            # run n times for each sample
+    parser.add_argument('--repeat_turn', default=3, type=int)            # run n times for each sample
     parser.add_argument('--save_per_sample', default=50, type=int)      # save per x sample
     parser.add_argument('--eval_per_sample', default=50, type=int)      # eval per x sample
     
@@ -212,12 +205,8 @@ if __name__ == "__main__":
         
     if args.debug:
         print("run in debug mode...")
-        # df = df.iloc[324: 326]
-        # df = df.iloc[17:17+2]
-        #error_lst = [13]#  0,1,3,5,10,14,15,17,20,23,25,27,33,35,40,44,49,54,56,57,58,60,63,65,66,71,73,74,77,83,85,86,87,89,90,92]
-        #df = df.iloc[error_lst]
         args.devices = eval(args.devices)[0]
-        #df = df.sample(5)
+        df = df.sample(5)
 
         args.exp_name = "TEST"
     else:
