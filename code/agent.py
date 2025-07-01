@@ -28,15 +28,10 @@ from utils import print_error, cal_sim_score, rebuild_retrieved_trips, get_trips
 # from interface.freebase_func import get_all_relations, get_all_entities, convert_id_to_name, get_types, process_middle_node, get_name_by_id
 # from interface.wikidata_func import get_all_relations, get_all_entities, get_types, convert_id_to_name, convert_name_to_id, get_name_by_id
 
-#API_KEY= "sk-fMVPB36VRb8TJLI073E408C1772848Df87F68c048aCeCf09"    # my
-# API_KEY = "sk-eGvij0QNBGTFGWxyLnwesdIbZbvMTo0KVkMYsg2rMRr2NK9k"    # cist_api_1
-API_KEY = "sk-raShXBCnm1Ln15DUw9VuXxwdy1LTy02MsEeOUN9dhJwlc09d"  # cist_api_2
 
-API_KEY_lst = ['sk-raShXBCnm1Ln15DUw9VuXxwdy1LTy02MsEeOUN9dhJwlc09d',  # cist_api_2
-               "sk-eGvij0QNBGTFGWxyLnwesdIbZbvMTo0KVkMYsg2rMRr2NK9k"   # cist_api_1
-             ]
-BASE_URL = "https://aigcbest.top/v1"
-#BASE_URL = "https://api2.aigcbest.top/v1/chat/completions"
+API_KEY = ""
+BASE_URL = ""
+
 MODEL_PATH = "/raid_sdb/tsy/LLMs"
 
 class EntityLinker:
