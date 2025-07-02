@@ -32,7 +32,7 @@ from utils import print_error, cal_sim_score, rebuild_retrieved_trips, get_trips
 API_KEY = ""
 BASE_URL = ""
 
-MODEL_PATH = "/raid_sdb/tsy/LLMs"
+MODEL_PATH = ""
 
 class EntityLinker:
     def __init__(self, args):
